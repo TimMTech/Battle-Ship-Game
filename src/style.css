@@ -1,0 +1,295 @@
+* {
+    font-family: 'Bangers', cursive;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+#header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    border-bottom: 0 none;
+}
+
+header {
+    border-bottom: 0 none;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(0.25turn, #091f29, #18355f, #030d3a);
+    background-size: contain;
+}
+
+.menu-option {
+    display: none;
+}
+
+.menu-option.active {
+    background-image: url('/src/Images/menuImage.png');
+    background-size:cover ;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    position: fixed;
+    background-color: white;
+    height: 22rem;
+    width: 30rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0.6rem solid black;
+    z-index: 10;
+}
+
+.menu-option.active .start-game{
+    font-size: 2rem;
+    color: red;
+    border-radius: 0.5rem;
+    width: 10rem;
+    height: 4rem;
+    background-color: rgba(255,255,255, 0.2);
+    transition: 1s;
+    margin-bottom: 1.2rem;
+}
+
+.menu-option.active .start-game:hover {
+    transform: scale(1.1,1.1);
+}
+
+
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.app-title {
+    color: rgba(255,255,255,1);
+    font-size: 5rem;
+}
+
+.game-info {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    margin-top: 4rem;
+}
+
+
+
+#game-board-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+#player-board {
+    display: grid;
+    background-color: lightblue;
+    grid-template-rows: repeat(10, 4.6vmin);
+    grid-template-columns: repeat(10, 4.6vmin);
+    margin: 2vmin;
+}
+
+#cpu-board {
+    display: grid;
+    background-color: lightblue;
+    grid-template-rows: repeat(10, 4.6vmin);
+    grid-template-columns: repeat(10, 4.6vmin);
+    margin: 2vmin;;
+}
+
+#cpu-board > .taken {
+    background-color: lightblue;
+}
+
+.start-round {
+    display: none;
+}
+
+.start-round.active {
+    display: flex;
+    justify-content: center;
+    width: 5rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.start-round.active:hover {
+    transform: scale(1.1,1.1);
+}
+
+.turn-display {
+    color: white;
+    font-size: 2rem;
+    display: flex;
+}
+
+.taken {
+    background-color: red;
+}
+
+.grid div {
+    height: 4.6vmin;
+    width: 4.6vmin;
+    border: 0.05rem solid rgb(232, 229, 238);
+}
+
+.start-game {
+    height: 2rem;
+    width: 5rem;
+}
+
+.rotate-ship {
+    height: 2rem;
+}
+
+#ship-display-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0,0,0,0.2)
+}
+
+#ship-display {
+    margin-top: 2rem;
+}
+
+#rotate-ship {
+    width: 5rem;
+    margin: 1.2rem;
+    transition: 1s;
+    cursor: pointer;
+}
+
+#rotate-ship:hover {
+    transform: scale(1.1,1.1);
+}
+
+.destroyer-container {
+    --width: 2;
+    background-color: rgb(44, 42, 42);
+}
+
+.destroyer-container-vertical {
+    --height: 2;
+    --width: 1;
+    background-color: rgb(44, 42, 42);
+}
+
+.destroyer {
+    background-color: rgb(44, 42, 42);
+}
+
+.submarine-container {
+    --width: 3;
+    background-color: rgb(44, 42, 42);
+}
+
+.submarine-container-vertical {
+    --height: 3;
+    --width: 1;
+    background-color: rgb(44, 42, 42);
+}
+
+.submarine {
+    background-color: rgb(44, 42, 42);
+}
+
+.cruiser-container {
+    --width: 3;
+    background-color: rgb(44, 42, 42);
+}
+
+.cruiser-container-vertical {
+    --height: 3;
+    --width: 1;
+    background-color: rgb(44, 42, 42);
+}
+
+.cruiser {
+    background-color: rgb(44, 42, 42);
+}
+
+.battleship-container {
+    --width: 4;
+    background-color: rgb(44, 42, 42);
+}
+
+.battleship-container-vertical {
+    --height: 4;
+    --width: 1;
+    background-color: rgb(44, 42, 42);
+}
+
+.battleship {
+    background-color: rgb(44, 42, 42);
+}
+
+.carrier-container {
+    --width: 5;
+    background-color: rgb(44, 42, 42);
+}
+
+.carrier-container-vertical {
+    --height: 5;
+    --width: 1;
+    background-color: rgb(44, 42, 42);
+}
+
+.carrier {
+    background-color: rgb(44, 42, 42);
+}
+
+.ship {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1vmin;
+    width: calc(4.6vmin * var(--width, 1));
+    height: calc(4.6vmin * var(--height, 1));
+
+}
+
+.ship div {
+    width: 4.6vmin;
+    height: 4.6vmin;
+    border: 0.05rem solid black;
+}
+
+
+#footer-container {
+    border-top: 0 none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    margin-top: 1rem;
+}
+
+.boom {
+    background-color: red !important;
+}
+
+.missed {
+    background-color: rgb(189, 185, 185) !important;
+}

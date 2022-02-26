@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <title>Battle Ship</title>
+</head>
+
+<body>
+    <header id="header-container">
+        <h1 class="app-title">Battle Ship</h1>
+    </header>
+    <div id="menuOption" class="menu-option">
+        <button id="startGame" class="start-game">Start Game</button>
+    </div>
+    <div id="overlay" class="overlay-toggle"></div>
+    <div id="info" class="game-info"></div>
+    <div id="game-board-container">
+        <div id="player-board" class="grid grid-user"></div>
+        <div id="cpu-board" class="grid grid-cpu"></div>
+    </div>
+    <div id="ship-display-container">
+        <button id="startRound" class="start-round">Start Round</button>
+        <div id="turnDisplay" class="turn-display"></div>
+        <div id="ship-display">
+            <div class="ship destroyer-container" draggable="true"><div id="destroyer-0"></div><div id="destroyer-1"></div></div>
+            <div class="ship submarine-container" draggable="true"><div id="submarine-0"></div><div id="submarine-1"></div><div id="submarine-2"></div></div>
+            <div class="ship cruiser-container" draggable="true"><div id="cruiser-0"></div><div id="cruiser-1"></div><div id="cruiser-2"></div></div>
+            <div class="ship battleship-container" draggable="true"><div id="battleship-0"></div><div id="battleship-1"></div><div id="battleship-2"></div><div id="battleship-3"></div></div>
+            <div class="ship carrier-container" draggable="true"><div id="carrier-0"></div><div id="carrier-1"></div><div id="carrier-2"></div><div id="carrier-3"></div><div id="carrier-4"></div></div>
+        </div>
+        <button id="rotate-ship">Rotate</button>
+    </div>
+
+
+    <footer id="footer-container">
+        <p id="footer-caption">Copyright &copy; Tim Mukhamedov 2022</p>
+    </footer>
+</body>
+
+</html>
